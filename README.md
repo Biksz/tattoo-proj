@@ -1,6 +1,6 @@
 # TattooProj
 
-Tetoválás időpont foglaló oldal, amin a regisztrált felhasználók már funkciók mellett időpontot tudnak foglalni tetoválásra.
+Tetoválás időpont foglaló oldal, amin a regisztrált felhasználók más funkciók mellett időpontot tudnak foglalni tetoválásra.
 
 ## Funkciók és belépés
 A belépésre 3 mód áll rendelkezésre: admin, regisztrált felhasználó és vendég.
