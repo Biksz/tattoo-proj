@@ -1,0 +1,46 @@
+<app-nav></app-nav>
+<body>
+    <div class="aboutUsContainer mat-elevation-z8">
+        <div class="content">
+        <p class="text" style="font-size: 2rem;">Árkalkulátor</p>
+        <p class="text">Az alábbi kalkulátor segít neked kiszámolni, mennyibe fog kerülni a tetoválásod.</p>
+        <p class="text">Ezek tájékoztató jellegű információk, a foglalás után keresni fogunk telefonon és ott megbeszéljük a részleteket.</p>
+        <h2 class="text">Részletek:</h2>
+        <br>
+        <p class="text">Tetoválás mérete:</p>
+        <p class="text">Kicsi tetoválás: 10cm*10cm vagy ennél kisebb.</p>
+        <p class="text">Közepes tetoválás: 10cm*10cm és 20cm*20cm közötti.</p>
+        <p class="text">Nagy tetoválás: 20cm*20cm vagy ennél nagyobb.</p>
+        <br>
+        <p class="text">Különleges hatás:</p>
+        <p class="text">Vízfesték hatás: a tetoválás egyes részei/egésze aquarell hatást keltenek.</p>
+        <p class="text">Élő hatás: nagyon részletes tetoválás pl: portré.</p>
+        <br>
+        <mat-radio-group [(ngModel)]="size">
+            <mat-radio-button value = 5000>Kicsi(5000 Q)</mat-radio-button>
+            <mat-radio-button value = 8000>Közepes(8000 Q)</mat-radio-button>
+            <mat-radio-button value = 10000>Nagy(10000 Q)</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <br>
+        <mat-radio-group [(ngModel)]="color">
+            <mat-radio-button value = 0>Fekete-fehér(nincs plusz költség)</mat-radio-button>
+            <mat-radio-button value = 1000>Színes, 5 színig(1000 Q)</mat-radio-button>
+            <mat-radio-button value = 2000>Színes, 5 színnél több(2000 Q)</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <br>
+        <mat-radio-group [(ngModel)]="effect">
+            <mat-radio-button value = 0>Nincs különleges hatás(0 Q)</mat-radio-button>
+            <mat-radio-button value = 2000>Vízfesték hatás(2000 Q)</mat-radio-button>
+            <mat-radio-button value = 6000>"Élő" tetoválás(6000 Q)</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <br>
+        <button mat-raised-button color="primary" (click)="countPrice()">Számolás</button>
+        <br>
+        <br>
+        <div>{{price}} Q-ba fog kerülni a tetoválásod</div>
+        </div>
+    </div>
+</body>

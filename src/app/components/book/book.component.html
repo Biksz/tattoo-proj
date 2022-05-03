@@ -1,0 +1,45 @@
+<app-nav></app-nav>
+<body>
+    <div class="aboutUsContainer mat-elevation-z8">
+        <div class="content">
+            <h1 class="text">Időpont foglalás</h1>
+            <form [formGroup]="bookForm" (ngSubmit)="bookSubmit()">
+                <mat-form-field>
+                    <input matInput placeholder="Név" formControlName="name"/>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="Telefonszám" formControlName="mobile"/>
+                </mat-form-field>
+                <mat-error *ngIf="bookForm?.errors?.['notCorrectMobileFormat']">
+                    Nem megfelelő telefon formátum!
+                </mat-error>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Válassz napot</mat-label>
+                    <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" (dateInput)="addEvent($event)">
+                    <mat-hint>HH/NN/ÉÉÉÉ</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Válassz időpontot</mat-label>
+                    <mat-select [(value)]="selected">
+                      <mat-option value="9">9:00</mat-option>
+                      <mat-option value="10">10:00</mat-option>
+                      <mat-option value="11">11:00</mat-option>
+                      <mat-option value="13">13:00</mat-option>
+                      <mat-option value="14">14:00</mat-option>
+                      <mat-option value="15">15:00</mat-option>
+                      <mat-option value="16">16:00</mat-option>
+                      <mat-option value="17">17:00</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <button mat-raised-button color="primary" type="submit">Foglalás</button>
+            </form>
+        </div>
+        <img src="assets/svgs/sunlight.svg" class="img" alt="">
+    </div>
+</body>

@@ -1,0 +1,39 @@
+<app-nav></app-nav>
+<body>
+    <div class="aboutUsContainer mat-elevation-z8">
+        <div style="padding-left: 1rem; padding-top: 1rem;">
+            <h1 class="text">Írj véleményt rólunk :) (csak jót)</h1>
+            <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+                <mat-form-field>
+                    <mat-label>Név: </mat-label>
+                    <input matInput type="text" formControlName="name">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Komment: </mat-label>
+                    <input matInput rows="5" cols="50" type="text" formControlName="comment">
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary" type="submit">Do IT</button>
+                </div>
+            </form>
+        </div>
+        <br><br>
+        <div *ngIf="comments.length" class="commentsdiv">
+            <table mat-table [dataSource]="comments" class="mat-elevation-z8" matSort>
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Név </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="comment">
+                  <th mat-header-cell *matHeaderCellDef> Comment </th>
+                  <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+        </div>
+    </div>
+</body>

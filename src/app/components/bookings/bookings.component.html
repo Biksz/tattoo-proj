@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<body>
+    <div class="aboutUsContainer mat-elevation-z8">
+        <div class="content">
+            <h1 class="text">Foglalások kezelése</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Dátum</th>
+                        <th>Időpont</th>
+                        <th>Telefonszám</th>
+                        <th>Műveletek</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of bookings">
+                       <td>{{book.user}}</td>
+                       <td>{{book.date}}</td>
+                       <td>{{book.time}}</td>
+                       <td>{{book.mobile}}</td>
+                       <td>
+                           <button mat-raised-button color="primary" (click)="deleteBooking(book)">Törlés</button>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,32 @@
+body{
+    background-color: #333;
+    display: flex;
+    align-items: center;
+}
+
+p {
+    font-size: 1rem;
+    padding-left: 2rem;
+}
+
+.aboutUsContainer{
+    height: 700px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ebebeb;
+    justify-items: center;
+    border-radius: 20px;
+    display: flexbox;
+}
+
+.text{
+    color: #333;
+    font-weight: bold;
+}
+
+img{
+    height: 400px;
+    width: 400px;
+    float: right;
+}

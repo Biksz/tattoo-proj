@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover, a:active {
+    color: white;
+}
+
+.nav-items{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-sidenav{
+    width: 250px;
+}
+mat-sidenav a:hover, a:active {
+    color: #4481eb;
+}

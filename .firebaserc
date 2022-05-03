@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webker-tattoo": {
+      "hosting": {
+        "tattoo-proj": [
+          "webker-tattoo"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webker-tattoo"
+  }
+}

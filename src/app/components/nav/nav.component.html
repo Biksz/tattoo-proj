@@ -1,0 +1,46 @@
+
+        <mat-toolbar [ngStyle]="{'background-color': '#4481eb'}">
+            <div fxHide.gt-xs>
+                <button mat-icon-button [matMenuTriggerFor]="menu" [ngStyle]="{'color': '#333'}">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['/dashboard']">
+                      <mat-icon>chair</mat-icon>
+                      <span>Home</span>
+                    </button>
+                    <button mat-menu-item *ngIf="user" [routerLink]="['/book']">
+                        <mat-icon>schedule</mat-icon>
+                        <span>Foglalás</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['/comments']">
+                        <mat-icon>rate_review</mat-icon>
+                        <span>Vélemények</span>
+                    </button>
+                    <button mat-menu-item *ngIf="user && isAdmin" [routerLink]="['/bookings']">
+                        <mat-icon>date_range</mat-icon>
+                        <span>Foglalások</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['/calculator']">
+                        <mat-icon>calculate</mat-icon>
+                        <span>Árkalkulátor</span>
+                    </button>
+                    <button mat-menu-item (click)="logout()">
+                      <mat-icon>logout</mat-icon>
+                      <span>Kijelentkezés</span>
+                    </button>
+                  </mat-menu>
+            </div>
+            <div style="color: white;">TATTOO</div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+                <ul class="nav-items" fxLayout fxLayoutGap="1rem">
+                    <li><a routerLink="/dashboard">Home</a></li>
+                    <li *ngIf="user"><a routerLink="/book">Időpont foglalás</a></li>
+                    <li><a routerLink="/comments">Vélemények</a></li>
+                    <li *ngIf="user && isAdmin"><a routerLink="/bookings">Foglalások</a></li>
+                    <li><a routerLink="/calculator">Árkalkulátor</a></li>
+                    <li><a (click)="logout()" style="cursor: pointer;">Kijelentkezés</a></li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        
